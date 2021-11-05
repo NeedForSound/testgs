@@ -1,7 +1,7 @@
 function testGS() {
 
-    const url = "https://script.googleusercontent.com/a/macros/xpertcure.com/echo?user_content_key=UCBu6TNTs5walq-VBMd7R5NdxUQ1eKFiaoW5F0EV2BXpbL0-O923C7YBTRnTiDXbFNfsikplnCq0OiSv4W8LBE-yaDtxu7AzOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKCXsRKgaA4rt0KJWFAZw31qS4chwneYR2vGhFOLiRFWzwDpO-C3WnZe7syhl49-b3LrJsEctYS9yahoNrxwXpShJEeTdksGvvxyzyXNnmZBR_GICXuQ_C4s61gI8n3Z1I4&lib=Mf0AY8A-YV--oqobBEDqq--dzRm4IKlxF"
-
+    const url = "https://script.google.com/macros/s/AKfycbxsXHS4OWlpjF-LO1DdX0A0FFelEhrXzLy_ichV8AG7-q2ZzNKxuZz2ftj8A2BFHPq2/exec"
+ 
 
     fetch(url)
         .then(d => d.json())
@@ -14,3 +14,28 @@ function testGS() {
 }
 
 document.getElementById("btn").addEventListener("click",testGS)
+
+function addGS() {
+
+    const url = "https://script.google.com/macros/s/AKfycbxsXHS4OWlpjF-LO1DdX0A0FFelEhrXzLy_ichV8AG7-q2ZzNKxuZz2ftj8A2BFHPq2/exec"
+ 
+
+    fetch(url,{})
+
+fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        //credentials: 'omit', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        //referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({name:"John"}) // body data type must match "Content-Type" header
+      });
+      //return response.json(); // parses JSON response into native JavaScript objects
+    }
+
+document.getElementById("btn2").addEventListener("click",addGS)
